@@ -1,0 +1,5 @@
+<p>Create your post</p>
+<form (ngSubmit)="onSubmit()">
+    <textarea id="comment" name="post" rows="5" required  [(ngModel)]="post.text"></textarea>
+    <button type="submit">Submit</button>
+</form>
