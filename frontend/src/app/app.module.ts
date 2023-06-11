@@ -7,12 +7,14 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DiscussionListComponent } from './discussion-list/discussion-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
-    PostFormComponent
+    PostFormComponent,
+    DiscussionListComponent
   ],
   imports: [
     BrowserModule,
