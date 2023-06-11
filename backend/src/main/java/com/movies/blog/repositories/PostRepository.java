@@ -1,5 +1,6 @@
-package com.movies.blog;
+package com.movies.blog.repositories;
 
+import com.movies.blog.entities.Post;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

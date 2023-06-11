@@ -1,45 +1,27 @@
-package com.movies.blog;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package com.movies.blog.entities;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@NoArgsConstructor
+@ToString
 public class Post {
-    public Post(String text) {
+    public Post(String text, Discussion discussion) {
         this.text = text;
-    }
-
-    public Post() {
-
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", text='" + text + '\'' +
-                '}';
+        this.discussion = discussion;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Getter
+    @Setter
     private  String text;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
+    @ManyToOne
+    @JoinColumn(name="discussion")
+    private Discussion discussion;
 }

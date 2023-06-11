@@ -1,5 +1,9 @@
 package com.movies.blog;
 
+import com.movies.blog.entities.Discussion;
+import com.movies.blog.entities.Post;
+import com.movies.blog.repositories.DiscussionRepository;
+import com.movies.blog.repositories.PostRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,13 +19,12 @@ public class BlogApplication {
 		SpringApplication.run(BlogApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner init(PostRepository postRepository){
+	CommandLineRunner init(PostRepository postRepository, DiscussionRepository discussionRepository){
+
 		return args -> {
-			Stream.of("Hahah", "Nice one").forEach(text -> {
-				Post post = new Post(text);
-				postRepository.save(post);
-			});
-			postRepository.findAll().forEach(System.out::println);
+
+
+
 		};
 	}
 
